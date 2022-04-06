@@ -7,8 +7,10 @@ import org.junit.Test;
 public class TestASumar {
 
 	@Test
-	public void test() {
-		fail("No implementado aun");
-	}
+    public void testUnaCifra() {
+        ASumar sumi = new ASumar();
+        String resultado = sumi.sumativo("5");
+        assertEquals("5 = 5",resultado );
+    }
 
 }
