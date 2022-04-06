@@ -6,6 +6,9 @@ import org.junit.Test;
 
 public class TestASumar {
 
+	/**
+	 * Test que prueba el método sumativo para un string de un sólo dígito.
+	 */
 	@Test
     public void testUnaCifra() {
         ASumar sumi = new ASumar();
