@@ -28,5 +28,10 @@ public class TestASumar {
         resultado = sumi.sumativo("-8");
         assertEquals("Negativo. Siempre negativo",resultado );
     }
-
+	
+	@Test
+    public void testNumeroVariosDigitos() {
+        resultado = sumi.sumativo("109");
+        assertEquals("1 + 0 + 9 = 10",resultado );
+    }
 }

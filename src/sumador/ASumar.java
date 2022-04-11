@@ -18,15 +18,41 @@ public class ASumar {
 	 * @return string con los sumandos y el resultado de la suma
 	 */
 	public String sumativo(String cad) {
-        String numero = cad;
-        if (numero.length() == 1) {
-            return (numero + " = " + numero);
+        if (cad.length() == 1) {
+            return (cad + " = " + cad);
         }
-        if (numero.substring(0,1).equals("-")) {
+        if (cad.substring(0,1).equals("-")) {
         	return "Negativo. Siempre negativo";
         }
         else {
-        	return "Error. Mi código ha fallado...";
+        	StringBuilder resultado = new StringBuilder ();
+        	for (int i = 0; i < cad.length(); i++) {
+        		resultado.append(cad.substring(i, i+1));
+        		resultado.append(" ");
+        		if (i == cad.length()-1) {
+        			resultado.append("= ");
+        			resultado.append(sumar(cad));
+        		}
+        		else {
+        			resultado.append("+ ");
+        		}
+        	}
+        	return resultado.toString();
         }
 	}
+	
+	/**
+	 * Método que calcula la suma de todos los dígitos de un número
+	 * @param valor_inicial: string con el número a operar
+	 * @return Int con la suma de todos los dígitos
+	 */
+	public int sumar(String valor_inicial) {
+        int suma = 0;
+
+        for (int i = 0; i < valor_inicial.length(); i++) {
+            String digito = valor_inicial.substring(i, i+1);
+            suma = suma + Integer.parseInt(digito);  
+        }
+        return suma;
+    }
 }
