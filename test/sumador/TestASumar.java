@@ -9,11 +9,24 @@ public class TestASumar {
 	/**
 	 * Test que prueba el método sumativo para un string de un sólo dígito.
 	 */
+	
+	private ASumar sumi = new ASumar();
+	private String resultado;
+	
 	@Test
     public void testUnaCifra() {
-        ASumar sumi = new ASumar();
-        String resultado = sumi.sumativo("5");
+        resultado = sumi.sumativo("5");
         assertEquals("5 = 5",resultado );
+    }
+	
+	/**
+	 * Test que prueba el método sumativo para un string que empieza por "-" (negativo)
+	 */
+	
+	@Test
+    public void testNumeroNegativo() {
+        resultado = sumi.sumativo("-8");
+        assertEquals("Negativo. Siempre negativo",resultado );
     }
 
 }

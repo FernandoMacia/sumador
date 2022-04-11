@@ -22,6 +22,9 @@ public class ASumar {
         if (numero.length() == 1) {
             return (numero + " = " + numero);
         }
+        if (numero.substring(0,1).equals("-")) {
+        	return "Negativo. Siempre negativo";
+        }
         else {
         	return "Error. Mi código ha fallado...";
         }
